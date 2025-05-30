@@ -15,7 +15,7 @@ jobs:
 
       - name: Build Image
         run: |
-          docker build -t ${{ secrets.DOCKER_USERNAME }}/demo-github-action:latest -f Dockerfile .
+          docker build -t demo-github-action:latest -f Dockerfile .
       
       # - name: Push Image
       #   run: |
