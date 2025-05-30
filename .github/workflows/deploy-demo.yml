@@ -23,7 +23,7 @@ jobs:
 
   deploy:
     needs: build
-    runs-on: ["self-hosted"]
+    runs-on: ["self-hosted"]  
 
     steps:
       - run: echo "hello, world!"
@@ -34,4 +34,4 @@ jobs:
       - run: docker stop demo-app || true;
       - run: docker rm demo-app || true;
 
-      - run: docker run -d --name demo-app  -p 5173:5173 ${{ secrets.DOCKER_USERNAME }}/demo-github-action:latest
+      - run: docker run -d --name demo-app  -p 5173:80 ${{ secrets.DOCKER_USERNAME }}/demo-github-action:latest
