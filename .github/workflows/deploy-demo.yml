@@ -6,3 +6,11 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: echo "Hello, world!"
+
+  deploy:
+    needs: build
+    runs-on: ["self-hosted", "localhost-1"]
+
+    steps:
+      - run: echo "hello, world!"
+      - run: echo $PWD
